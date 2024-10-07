@@ -18,7 +18,6 @@ this topic at the university) and set to work. A couple of hours later, the prog
 one by one, which indicated a kilometer of the path where the box could be buried, and the program checked whether the cargo was 
 there or not.
 
-
 But everything turned out to be not as simple as the programmer thought. Every time when the program tried to check the entered 
 kilometer mark, the whole cargo was moving to a new places, because each box had legs (i.e. tentacles). Then, in order not to spook 
 the boxes, the program has had to be modified. The beginning was the same - the martians had to enter 3 numbers one by one, which 
