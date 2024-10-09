@@ -8,7 +8,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int[] cargoLocation = {0, 0, 311, 0, 17, 385, 0};
         System.out.println("Do you want to enter cargo box locations by hand?"
-                + "If so, please enter 1, otherwise 0");
+                + "If so, please enter 1, otherwise, any other number");
         int flag = sc.nextInt();
         if (flag == 1) {
             newCargoLocation(cargoLocation);
@@ -19,11 +19,13 @@ public class Main {
             martiansInput[i] = sc.nextInt();
         }
         int count = correctGuessCount(cargoLocation, martiansInput);
+        System.out.println(count);
         while (count < 3) {
             for (int i = 0; i < 3; i++) {
                 martiansInput[i] = sc.nextInt();
             }
             count = correctGuessCount(cargoLocation, martiansInput);
+            System.out.println(count);
         }
 
         for (int i = 0; i < 3; i++) {
@@ -32,10 +34,13 @@ public class Main {
     }
 
     public static int correctGuessCount(int[] cargoLocation, int[] martiansInput) {
+        int[] cargoLocation1 = new int[7];
+        System.arraycopy(cargoLocation, 0, cargoLocation1, 0, 7);
         int count = 0;
         for (int i = 0; i < 3; i++) {
-            if (cargoLocation[martiansInput[i] - 1] > 0) {
+            if (cargoLocation1[martiansInput[i] - 1] > 0) {
                 count++;
+                cargoLocation1[martiansInput[i] - 1] = 0;
             }
         }
         return count;
